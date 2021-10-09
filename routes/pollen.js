@@ -14,6 +14,7 @@ const getPollenData = require("../models/pollen");
 
 router.get("/", (req, res) => {
   const { lat, long } = req.query;
+  console.log(lat, long);
   const pollenData = getPollenData(lat, long);
 
   if (pollenData.rows.success != true) {

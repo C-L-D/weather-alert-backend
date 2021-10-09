@@ -16,11 +16,12 @@ const url = "https://api.ambeedata.com/latest/pollen/by-lat-lng?";
 
 async function getPollenData(lat, long) {
   const res = await fetch(`${url}lat=${lat}&lng=${long}`, {
-    method: "GET",
-    "x-api-key": process.env.AMBEE_API_KEY,
+    "x-api-key": `${process.env.AMBEE_API_KEY}`,
     "Content-Type": "application/json",
   });
+  // API request is being made
 
+  console.log(res);
   const data = await res.json();
 
   if (data.message != true) {
