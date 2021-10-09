@@ -1,6 +1,6 @@
 # Weather and Medication Alert App
 
-Welcome to the documentation for the backend of my weather and medication alert app! This app aims to provide real-time notifications about changes in the weather to me using a React Native App on the frontend. This is my first backend built using test-driven development and using jest-express.
+Welcome to the documentation for the backend of my weather and medication alert app! This app aims to provide real-time notifications about changes in the weather to me using a React Native App on the frontend. This is my first backend built using test-driven development.
 
 This backend is currently configured to use Ambee Weather and Pollen APIs.
 
@@ -15,7 +15,7 @@ I suffer from weather induced migraines and hayfever but I often find that I for
 - Create test data to temporarily return to frontend ✔️
 - Configure node modules ✔️
   - Install dotenv, helmet, CORS, node-fetch ✔️
-- Create router tests
+- Create router tests ✔️
 - Create router
 - Create models
 
