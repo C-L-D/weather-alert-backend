@@ -15,7 +15,7 @@ I suffer from weather induced migraines and hayfever but I often find that I for
 - Create test data to temporarily return to frontend ✔️
 - Configure node modules ✔️
   - Install dotenv, helmet, CORS, node-fetch ✔️
-- Create router tests
+- Create router tests ✔️
 - Create router
 - Create models
 
