@@ -11,8 +11,8 @@ I suffer from weather induced migraines and hayfever but I often find that I for
 - Initialise express app ✔️
 - Create folder structure ✔️
 - Create test data to temporarily return to frontend ✔️
-- Configure node modules
-  - Install dotenv, helmet, CORS, node-fetch - In progress
+- Configure node modules ✔️
+  - Install dotenv, helmet, CORS, node-fetch ✔️
 - Create router tests
 - Create router
 - Create models
