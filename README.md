@@ -19,6 +19,9 @@ I suffer from weather induced migraines and hayfever but I often find that I for
 - Create router
 - Create models
 
+# License
+MIT
+
 # Credits
 
 - Claire Doswell
