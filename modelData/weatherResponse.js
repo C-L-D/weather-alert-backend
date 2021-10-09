@@ -1,0 +1,21 @@
+export default {
+  message: "success",
+  data: {
+    time: 1602153684,
+    temperature: 81.87,
+    apparentTemperature: 88.64,
+    summary: "Humid",
+    icon: "clear-day",
+    dewPoint: 75.35,
+    humidity: 0.81,
+    pressure: 1005.9,
+    windSpeed: 3.19,
+    windGust: 3.19,
+    windBearing: 72,
+    cloudCover: 0.83,
+    visibility: 10,
+    ozone: 267.3,
+    lat: "12",
+    lng: "77",
+  },
+};

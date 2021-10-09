@@ -9,7 +9,8 @@
 
 ## Routes required
 
-- GET "/"
+- GET "/pollen"
+- GET "/weather"
 
 ## Models required
 
