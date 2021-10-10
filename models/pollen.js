@@ -24,11 +24,11 @@ async function getPollenData(lat, long) {
 
   const data = await res.json();
   console.log(data);
-  
+
   if (data.message != true) {
     return { success: false };
   }
-  return { success: true, payload: data.data.Risk };*/
+  return { success: true, payload: data.data.Risk };
 }
 
 module.exports = getPollenData;

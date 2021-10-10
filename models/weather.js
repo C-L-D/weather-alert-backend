@@ -16,17 +16,19 @@ const url = "https://api.ambeedata.com/weather/latest/by-lat-lng?";
 
 async function getWeatherData(lat, long) {
   const res = await fetch(`${url}lat=${lat}&lng=${long}`, {
-    method: "GET",
-    "x-api-key": process.env.AMBEE_API_KEY,
-    "Content-Type": "application/json",
+    headers: {
+      "x-api-key": `${process.env.AMBEE_API_KEY}`,
+      "Content-Type": "application/json",
+    },
   });
 
   const data = await res.json();
+  console.log(data.data);
 
-  if (data.message != true) {
+  if (data.message != "success") {
     return { success: false };
   }
-  return { success: true, payload: data.data.Risk };
+  return { success: true, payload: data.data.pressure };
 }
 
 module.exports = getWeatherData;
