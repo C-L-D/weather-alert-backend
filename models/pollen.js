@@ -16,10 +16,10 @@ const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 const url = "https://api.tomorrow.io/v4/timelines";
-// store last response and timestamp.
-const apikey = process.env.TOMORROW_API_KEY;
 
-const location = [52.4, 1.9];
+let lastResponse;
+
+const apikey = process.env.TOMORROW_API_KEY;
 
 const fields = ["treeIndex", "grassIndex", "weedIndex"];
 
@@ -35,12 +35,21 @@ const endTime = moment.utc(time).add(3, "hours").toISOstring;
 
 const timezone = "GMT";
 
-const params = queryString.stringify(
-  { apikey, location, fields, units, timesteps, startTime, endTime, timezone },
-  { arrayformat: "comma" }
-);
-
 async function getPollenData(lat, long) {
+  const location = [lat, long];
+  const params = queryString.stringify(
+    {
+      apikey,
+      location,
+      fields,
+      units,
+      timesteps,
+      startTime,
+      endTime,
+      timezone,
+    },
+    { arrayformat: "comma" }
+  );
   const res = await fetch(`${url}?${params}`, {
     method: "GET",
     headers: {
@@ -49,6 +58,7 @@ async function getPollenData(lat, long) {
   });
 
   const data = await res.json();
+  lastResponse = data;
   console.log(data);
 
   if (data.message != true) {
