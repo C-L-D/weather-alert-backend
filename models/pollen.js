@@ -61,7 +61,7 @@ async function getPollenData(lat, long) {
   lastResponse = data;
   console.log(data);
 
-  if (data.message != true) {
+  if (data != true) {
     throw new Error();
   }
   return data.data.timlines.intervals;
