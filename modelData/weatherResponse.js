@@ -1,21 +1,22 @@
 module.exports = {
-  message: "success",
   data: {
-    time: 1602153684,
-    temperature: 81.87,
-    apparentTemperature: 88.64,
-    summary: "Humid",
-    icon: "clear-day",
-    dewPoint: 75.35,
-    humidity: 0.81,
-    pressure: 1005.9,
-    windSpeed: 3.19,
-    windGust: 3.19,
-    windBearing: 72,
-    cloudCover: 0.83,
-    visibility: 10,
-    ozone: 267.3,
-    lat: "12",
-    lng: "77",
+    timelines: [
+      {
+        timestep: "1h",
+        startTime: "2021-12-02T12:00:00Z",
+        endTime: "2021-12-07T00:00:00Z",
+        intervals: [
+          {
+            startTime: "2021-12-02T12:00:00Z",
+            values: {
+              treeIndex: 0,
+              grassIndex: 0,
+              weedIndex: 0,
+              pressureSurfaceLevel: 1007.17,
+            },
+          },
+        ],
+      },
+    ],
   },
 };

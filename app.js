@@ -6,7 +6,6 @@ var logger = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 
-const pollenRouter = require("./routes/pollen");
 const weatherRouter = require("./routes/weather");
 
 var app = express();

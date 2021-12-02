@@ -15,7 +15,7 @@
 
 const { Router } = require("express");
 const router = Router();
-const getWeatherData = require("../models/weather");
+const getWeatherData = require("../models/getWeatherData");
 const mockWeatherData = require("../modelData/weatherResponse");
 
 router.get("/", (req, res) => {

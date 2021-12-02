@@ -1,7 +1,7 @@
 // plan
 // set up fetch function fron node-fetch
 // async function getPollenData
-// takes in lat and long, pollen types, units, timesteps, start time, end time.
+// takes in lat and long, data, units, timesteps, start time, end time.
 // await fetch to API
 // headers with content-type
 // await res.json
@@ -21,7 +21,7 @@ let lastResponse;
 
 const apikey = process.env.TOMORROW_API_KEY;
 
-const fields = ["treeIndex", "grassIndex", "weedIndex"];
+const fields = ["treeIndex", "grassIndex", "weedIndex", "pressureSurfaceLevel"];
 
 const units = "metric";
 
@@ -67,4 +67,4 @@ async function getPollenData(lat, long) {
   return data.data.timlines.intervals;
 }
 
-module.exports = getPollenData;
+module.exports = getWeatherData;
