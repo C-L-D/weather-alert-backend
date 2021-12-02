@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   message: "success",
   data: {
     time: 1602153684,
