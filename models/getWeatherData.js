@@ -35,7 +35,7 @@ const endTime = moment.utc(time).add(3, "hours").toISOstring;
 
 const timezone = "GMT";
 
-async function getPollenData(lat, long) {
+async function getWeatherData(lat, long) {
   const location = [lat, long];
   const params = queryString.stringify(
     {
