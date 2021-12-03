@@ -31,6 +31,8 @@ const time = moment.utc();
 
 const startTime = moment.utc(time).add(0, "minutes").toISOstring;
 
+let checkTime;
+
 const endTime = moment.utc(time).add(3, "hours").toISOstring;
 
 const timezone = "GMT";
@@ -50,16 +52,20 @@ async function getWeatherData(lat, long) {
     },
     { arrayformat: "comma" }
   );
-  const res = await fetch(`${url}?${params}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 
-  const data = await res.json();
-  lastResponse = data;
-  console.log(data);
+  if (lastResponse.data.timelines.startTime != checkTime) {
+    const res = await fetch(`${url}?${params}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    lastResponse = data;
+    checkTime = moment.utc(time).add(1, "hours").toISOstring;
+    console.log(data);
+  }
 
   if (data != true) {
     throw new Error();
