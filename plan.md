@@ -4,15 +4,13 @@
 
 - Recieve a GET request from the frontend
 - Make a fetch request to the weather APIs
+- Store last response data to compare time. Do not get new data if last response less than 1 h old
 - Return the pollen and atmospheric pressure data in JSON format to the frontend
-- No storage of data is required due to frontend caching
 
 ## Routes required
 
-- GET "/pollen"
 - GET "/weather"
 
 ## Models required
 
-- getPollenData
 - getWeatherData
