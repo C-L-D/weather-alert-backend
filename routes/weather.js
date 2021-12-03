@@ -20,19 +20,18 @@ const mockWeatherData = require("../modelData/weatherResponse");
 
 router.get("/", (req, res) => {
   const { lat, long } = req.query;
-  /*
-  const weatherData = getWeatherData(lat, long);
 
-  if (weatherData.rows.success != true) {
+  const data = getWeatherData(lat, long);
+  console.log("router", data);
+
+  if (data.data != true) {
     res.json({ success: false, message: "Weather data were not retrieved" });
-  }*/
-
-  const weatherData = { payload: mockWeatherData.data.pressure };
+  }
 
   res.json({
     success: true,
     message: "Here is the weather data",
-    payload: { pressure: weatherData.payload },
+    payload: { data },
   });
 });
 
