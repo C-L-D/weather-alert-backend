@@ -11,30 +11,20 @@
 
 const queryString = require("query-string");
 const moment = require("moment");
-
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-const url = "https://api.tomorrow.io/v4/timelines";
-
 let lastResponse;
-
-const apikey = process.env.TOMORROW_API_KEY;
-
-const fields = ["treeIndex", "grassIndex", "weedIndex", "pressureSurfaceLevel"];
-
-const units = "metric";
-
-const timesteps = ["current", "1h"];
-
-const time = moment.utc();
-
-const startTime = moment.utc(time).add(0, "minutes").toISOstring;
-
 let checkTime;
 
+const url = "https://api.tomorrow.io/v4/timelines";
+const apikey = process.env.TOMORROW_API_KEY;
+const fields = ["treeIndex", "grassIndex", "weedIndex", "pressureSurfaceLevel"];
+const units = "metric";
+const timesteps = ["current", "1h"];
+const time = moment.utc();
+const startTime = moment.utc(time).add(0, "minutes").toISOstring;
 const endTime = moment.utc(time).add(3, "hours").toISOstring;
-
 const timezone = "GMT";
 
 async function getWeatherData(lat, long) {
@@ -60,7 +50,6 @@ async function getWeatherData(lat, long) {
         "Content-Type": "application/json",
       },
     });
-
     const data = await res.json();
     lastResponse = data;
     checkTime = moment.utc(time).add(1, "hours").toISOstring;
